@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joel Eddington: Gay With A Passion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .rainbow-bg {
+            background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff, #ff0080);
+            background-size: 800% 800%;
+            animation: rainbow 8s ease infinite;
+        }
+        
+        .rainbow-text {
+            background: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 400% 400%;
+            animation: rainbow 3s ease infinite;
+        }
+        
+        .gaydar {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #ff0000 0deg 45deg,
+                #ff8000 45deg 90deg,
+                #ffff00 90deg 135deg,
+                #00ff00 135deg 180deg,
+                #0000ff 180deg 225deg,
+                #8000ff 225deg 270deg,
+                #ff00ff 270deg 315deg,
+                #ff0080 315deg 360deg
+            );
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        
+        .gaydar-needle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 80px;
+            background-color: white;
+            transform-origin: bottom center;
+            animation: detect 2s infinite alternate;
+        }
+        
+        @keyframes detect {
+            0% { transform: translate(-50%, -100%) rotate(-30deg); }
+            100% { transform: translate(-50%, -100%) rotate(30deg); }
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            animation: confetti 5s ease-in-out infinite;
+        }
+        
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-pink-50 min-h-screen">
+    <!-- Confetti elements will be added by JS -->
+    
+    <header class="rainbow-bg py-6 shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl md:text-6xl font-bold text-center text-white">
+                <span class="rainbow-text">Joel Eddington</span>
+                <br>
+                <span class="text-3xl md:text-4xl">Gay With A Passion™</span>
+            </h1>
+        </div>
+    </header>
+    
+    <main class="container mx-auto px-4 py-8">
+        <section class="mb-16">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <img src="https://placehold.co/600x400/ff00ff/ffffff?text=Joel+Eddington" alt="Joel Eddington" class="rounded-lg shadow-xl border-4 border-purple-500 transform rotate-2 hover:rotate-0 transition-transform">
+                        <div class="absolute -top-4 -right-4 bg-yellow-300 text-purple-900 px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+                            <i class="fas fa-certificate mr-2"></i> 100% Certified Gay
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-4 text-purple-800">The Gayest Man Alive</h2>
+                    <p class="text-lg mb-4 text-gray-700">
+                        Joel Eddington isn't just gay. He's <span class="font-bold text-pink-600">GAY WITH A PASSION</span>. 
+                        His gayness radiates so intensely that rainbows form spontaneously in his presence. 
+                        Scientists are baffled by his ability to turn any situation into a fabulous moment.
+                    </p>
+                    <div class="bg-pink-100 border-l-4 border-pink-500 p-4 mb-4">
+                        <p class="text-pink-800 italic">
+                            "I've never seen someone so effortlessly turn a hardware store into a pride parade." 
+                            <span class="block text-right font-bold">- Local Hardware Store Clerk</span>
+                        </p>
+                    </div>
+                    <button id="gayTestBtn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all transform hover:scale-105">
+                        <i class="fas fa-rainbow mr-2"></i> Test Your Gaydar
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center text-purple-800">Joel's Gay Superpowers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-blue-500 transform hover:-translate-y-2 transition-transform">
+                    <div class="text-4xl text-blue-500 mb-4">
+                        <i class="fas fa-rainbow"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-800">Rainbow Generation</h3>
+                    <p class="text-gray-700">Can summon a full-spectrum rainbow at will, even indoors or at night.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-pink-500 transform hover:-translate-y-2 transition-transform">
+                    <div class="text-4xl text-pink-500 mb-4">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-pink-800">Fashion Sense</h3>
+                    <p class="text-gray-700">Instantly knows which outfit will slay, even with eyes closed.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-green-500 transform hover:-translate-y-2 transition-transform">
+                    <div class="text-4xl text-green-500 mb-4">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-green-800">Disco Reflexes</h3>
+                    <p class="text-gray-700">Automatic voguing when any music plays, regardless of genre.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-16 text-center">
+            <div id="gaydarContainer" class="hidden mx-auto mb-8">
+                <div class="gaydar mx-auto">
+                    <div class="gaydar-needle"></div>
+                </div>
+                <p id="gaydarResult" class="text-2xl font-bold mt-4 rainbow-text"></p>
+            </div>
+            
+            <h2 class="text-3xl font-bold mb-8 text-purple-800">Joel's Gay Timeline</h2>
+            <div class="relative">
+                <div class="absolute left-1/2 h-full w-1 bg-gradient-to-b from-purple-400 to-pink-500 transform -translate-x-1/2"></div>
+                
+                <div class="mb-8">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-pink-500 text-white font-bold text-xl mx-auto shadow-lg">
+                        1
+                    </div>
+                    <div class="mt-4 bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto border-l-4 border-pink-500">
+                        <h3 class="text-xl font-bold text-pink-700">Birth</h3>
+                        <p class="text-gray-700">Born fabulous. Hospital staff reported glitter in the delivery room.</p>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500 text-white font-bold text-xl mx-auto shadow-lg">
+                        2
+                    </div>
+                    <div class="mt-4 bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto border-l-4 border-purple-500">
+                        <h3 class="text-xl font-bold text-purple-700">First Words</h3>
+                        <p class="text-gray-700">"Yaaas queen!" (Though parents insist it was just "mama")</p>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white font-bold text-xl mx-auto shadow-lg">
+                        3
+                    </div>
+                    <div class="mt-4 bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto border-l-4 border-blue-500">
+                        <h3 class="text-xl font-bold text-blue-700">School Days</h3>
+                        <p class="text-gray-700">Organized the first elementary school pride parade during recess.</p>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-white font-bold text-xl mx-auto shadow-lg">
+                        4
+                    </div>
+                    <div class="mt-4 bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto border-l-4 border-green-500">
+                        <h3 class="text-xl font-bold text-green-700">Coming Out</h3>
+                        <p class="text-gray-700">Family: "We know." Friends: "We've always known." Strangers: "Obviously."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="bg-gradient-to-r from-purple-100 to-pink-100 p-8 rounded-xl shadow-inner mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-center text-purple-800">Joel's Gay Agenda</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-3 text-pink-700 flex items-center">
+                        <i class="fas fa-check-circle text-pink-500 mr-2"></i> Daily Goals
+                    </h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-sparkle text-yellow-500 mt-1 mr-2"></i>
+                            <span>Spread at least 3 rainbows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-sparkle text-yellow-500 mt-1 mr-2"></i>
+                            <span>Turn 1 straight person fabulous (just by proximity)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-sparkle text-yellow-500 mt-1 mr-2"></i>
+                            <span>Out-dance at least 2 people in public</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-3 text-purple-700 flex items-center">
+                        <i class="fas fa-trophy text-purple-500 mr-2"></i> Lifetime Achievements
+                    </h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-purple-400 mt-1 mr-2"></i>
+                            <span>Won "Most Fabulous Walk" award 7 years running</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-purple-400 mt-1 mr-2"></i>
+                            <span>Invented new shade of pink (Joel's Blush™)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-purple-400 mt-1 mr-2"></i>
+                            <span>Made history by voguing during a bank transaction</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="text-center py-8 rainbow-bg rounded-xl shadow-lg text-white">
+            <h2 class="text-3xl font-bold mb-4">Joel's Official Gayness Rating</h2>
+            <div class="text-6xl font-bold mb-4 rainbow-text">11/10</div>
+            <p class="text-xl mb-6">(Yes, we know that's mathematically impossible. Joel breaks all rules.)</p>
+            <button id="confettiBtn" class="bg-white text-purple-600 hover:bg-purple-100 font-bold py-3 px-6 rounded-full shadow-lg transition-all transform hover:scale-105">
+                <i class="fas fa-sparkles mr-2"></i> Celebrate Joel's Gayness
+            </button>
+        </section>
+    </main>
+    
+    <footer class="bg-purple-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-2xl font-bold rainbow-text">Joel Eddington</h3>
+                    <p class="text-purple-300">Gay With A Passion Since Birth</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-2xl text-pink-400 hover:text-pink-200 transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-2xl text-blue-400 hover:text-blue-200 transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-2xl text-red-400 hover:text-red-200 transition-colors">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="text-2xl text-green-400 hover:text-green-200 transition-colors">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-purple-700 mt-6 pt-6 text-center text-purple-300">
+                <p>Disclaimer: This website is a satirical tribute to Joel Eddington's fabulousness. All claims about supernatural gay abilities are probably true.</p>
+                <p class="mt-2">© 2025 The Joel Eddington Gay Appreciation Society</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Gaydar test functionality
+        document.getElementById('gayTestBtn').addEventListener('click', function() {
+            const container = document.getElementById('gaydarContainer');
+            const result = document.getElementById('gaydarResult');
+            
+            container.classList.remove('hidden');
+            container.scrollIntoView({ behavior: 'smooth' });
+            
+            // Simulate gaydar detection
+            setTimeout(() => {
+                result.textContent = "Gay Detection: MAXIMUM LEVEL";
+                createConfetti(50);
+            }, 2000);
+        });
+        
+        // Confetti button functionality
+        document.getElementById('confettiBtn').addEventListener('click', function() {
+            createConfetti(100);
+        });
+        
+        // Create confetti elements
+        function createConfetti(count) {
+            for (let i = 0; i < count; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                // Random position
+                confetti.style.left = Math.random() * 100 + 'vw';
+                
+                // Random color
+                const colors = ['#ff0000', '#ff8000', '#ffff00', '#00ff00', '#0000ff', '#8000ff', '#ff00ff'];
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Random size
+                const size = Math.random() * 10 + 5;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                
+                // Random animation duration
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                
+                document.body.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+        
+        // Add some initial confetti for fun
+        window.addEventListener('load', () => {
+            createConfetti(30);
+        });
+    </script>
+</body>
+</html>
